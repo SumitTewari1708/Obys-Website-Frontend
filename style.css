@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Plain Light";
   color: white;
-  cursor: none;
+  /* cursor: none; */
 }
 
 @font-face {
@@ -53,9 +53,15 @@ body {
   gap: 2.5vw;
 }
 
-.line h1,
+.line h1 {
+  font-size: 6.5vw;
+}
+
 .line h2 {
-  font-size: 7.5vw;
+  font-size: 5vw;
+  opacity: 0;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
 .line-p1 {
@@ -78,6 +84,37 @@ body {
   text-align: right;
 }
 
+@keyframes anime {
+  0% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 0.1px white;
+    color: white;
+    font-weight: 500;
+    opacity: 1;
+  }
+  48% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 0.1px white;
+    color: white;
+    font-weight: 500;
+    opacity: 0;
+  }
+  50% {
+    font-family: "Silk Serif";
+    -webkit-text-stroke: 0.1px white;
+    color: transparent;
+    font-weight: 500;
+    opacity: 1;
+  }
+  100% {
+    font-family: "Silk Serif";
+    -webkit-text-stroke: 0.1px white;
+    color: transparent;
+    font-weight: 500;
+    opacity: 0;
+  }
+}
+
 .main {
   position: relative;
   background-color: #020202;
@@ -89,7 +126,7 @@ body {
 }
 
 .navbar {
-  padding: 3.8vw 4.8vw;
+  padding: 3vw 4.8vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,6 +145,12 @@ body {
 .hero {
   width: 72%;
   margin-left: 28%;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 999;
 }
 
 .hero:nth-child(2) {
@@ -117,4 +160,15 @@ body {
 .hero h1 {
   font-size: 7.3vw;
   line-height: 7.85vw;
+}
+
+.hero h2 {
+  font-size: 7.3vw;
+  line-height: 7.85vw;
+}
+
+.hero h2:hover {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  font-weight: 500;
 }
