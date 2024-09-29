@@ -123,6 +123,7 @@ body {
 
 .page1 {
   height: 100vh;
+  position: relative;
   /* background-color: #151515; */
 }
 
@@ -147,10 +148,11 @@ body {
   width: 72%;
   margin-left: 28%;
   height: fit-content;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-y: hidden;
   display: flex;
   align-items: center;
-  position: relative;
+  /* position: relative; */
   z-index: 999;
 }
 
@@ -161,6 +163,17 @@ body {
 .hero h1 {
   font-size: 7.3vw;
   line-height: 7.85vw;
+  position: relative;
+}
+
+#hero1::before {
+  content: "01";
+  font-size: 3.5vw;
+  font-weight: 500;
+  font-family: "silk serif";
+  position: absolute;
+  left: 21%;
+  top: 25%;
 }
 
 .hero h2 {
@@ -232,6 +245,7 @@ body {
   min-height: 100vh;
   width: 100%;
   position: relative;
+  margin-bottom: 8vw;
   /* background-color: rgb(109, 92, 92); */
 }
 
@@ -245,9 +259,20 @@ body {
 
 .p4-content h1 {
   font-size: 7vw;
+  position: relative;
 }
 
-.p4-content .underline {
+.p4-content h1::before {
+  content: "03";
+  font-size: 3.5vw;
+  font-weight: 500;
+  font-family: "silk serif";
+  position: absolute;
+  left: -10%;
+  top: 6%;
+}
+
+.underline {
   width: 100%;
   height: 1px;
   background-color: white;
@@ -310,7 +335,138 @@ body {
   font-weight: 500;
 }
 
+.p4-end {
+  position: absolute;
+  top: 101%;
+  font-size: 1.1vw;
+  color: rgba(255, 255, 255, 0.815);
+}
+
 .page5 {
   min-height: 100vh;
   width: 100%;
+  position: relative;
+}
+
+.elem1 {
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin-bottom: -1.5vw;
+}
+
+.elem1 h1 {
+  font-size: 7vw;
+  font-weight: 400;
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  display: inline-block;
+  margin-left: 16px;
+  animation: moving-elem 20s linear infinite;
+}
+
+@keyframes moving-elem {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+.elem2 {
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin-bottom: -1.5vw;
+}
+
+.elem2 h1 {
+  font-size: 7vw;
+  font-weight: 400;
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  display: inline-block;
+  transform: translateX(calc(-100% - 20px));
+  animation: moving-elem 25s linear infinite reverse;
+}
+
+.elem1 h1 span,
+.elem2 h1 span {
+  color: transparent;
+  font-style: italic;
+  font-family: "silk serif";
+}
+
+.page6 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.footer {
+  width: 67.5vw;
+  position: relative;
+  left: 28%;
+  right: 3.5%;
+  padding-top: 2vw;
+}
+
+.footer-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3.5vw;
+}
+
+.footer-heading h1 {
+  font-size: 7vw;
+  position: relative;
+}
+
+.footer-heading h1:hover {
+  -webkit-text-stroke: 1px white;
+  font-weight: 400;
+  color: transparent;
+  font-family: "silk serif";
+}
+
+.footer-heading h1::before {
+  content: "04";
+  font-size: 3.5vw;
+  font-weight: 500;
+  font-family: "silk serif";
+  position: absolute;
+  left: -17%;
+  top: 6%;
+}
+
+.footer-heading svg {
+  width: 6.5vw;
+  height: 6.5vw;
+}
+
+.footer-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4vw;
+}
+
+.box1 h4,
+.box1 h2,
+.box2 h4,
+.box2 h2,
+.box3 h4,
+.box3 h2 {
+  font-weight: 400;
+}
+
+.box1 h4,
+.box2 h4,
+.box3 h4 {
+  margin-bottom: 2vw;
+}
+
+.copyright {
+  position: absolute;
+  margin-top: -1vw;
 }
