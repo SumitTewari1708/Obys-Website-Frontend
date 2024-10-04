@@ -14,11 +14,15 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="crsr"></div>
-
     <div id="loader">
       <div class="line">
         <div class="line-p1">
@@ -140,22 +144,17 @@
         <div class="hero" id="hero4">
           <h1>EXPERIENCES</h1>
         </div>
+        <img id="flag-crsr" src="assets/Flag.jpg" alt="" />
       </div>
       <div class="page2" data-scroll data-scroll-speed="-1.5">
         <div class="video-container">
           <div class="video-crsr flx">
             <i class="ri-play-fill"></i>
           </div>
-          <img
-            src="https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg"
-            alt=""
-          />
-          <!-- <video
-            autoplay
+          <video
             loop
-            muted
             src="https://obys.agency/wp-content/uploads/2022/11/Obys-Showreel-2022.mp4"
-          ></video> -->
+          ></video>
         </div>
       </div>
       <div class="page3" data-scroll data-scroll-speed="-1.5">
@@ -221,7 +220,6 @@
             </div>
           </div>
           <div class="img-sec" id="i-sec6">
-            <!-- <h1>MAKHNO</h1> -->
             <img src="assets/Makhno_First.png" alt="" />
             <img src="assets/Makhno_Hover.png" alt="" />
           </div>
@@ -303,7 +301,7 @@
       <div class="page6" data-scroll data-scroll-speed="-1.5">
         <div class="footer">
           <div class="footer-heading">
-            <h1>LET'S CREATE</h1>
+            <h1 id="fh-motion">LET'S CREATE</h1>
             <svg
               class="entry-title__arrow"
               viewBox="0 0 118 91"
@@ -369,6 +367,21 @@
       type="text/javascript"
       src="https://unpkg.com/sheryjs/dist/Shery.js"
     ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"
+      integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/textillate@0.4.1/jquery.textillate.min.js"></script>
 
     <script src="script.js"></script>
   </body>

@@ -7,6 +7,10 @@
   /* cursor: none; */
 }
 
+.font-silk {
+  font-family: "Silk Serif"; /* Use your desired font here */
+}
+
 @font-face {
   font-family: "Gilroy";
   src: url(fonts/Gilroy.ttf);
@@ -18,21 +22,17 @@ body {
   height: 100%;
 }
 
+.mousefollower {
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255);
+  scale: 2;
+  mix-blend-mode: difference;
+}
+
 .flx {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.crsr {
-  width: 3vw;
-  height: 3vw;
-  border: 1px solid rgba(255, 255, 255, 0.589);
-  border-radius: 50%;
-  z-index: 99;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: difference;
 }
 
 #loader {
@@ -128,6 +128,15 @@ body {
   margin-bottom: 1vh;
 }
 
+#flag-crsr {
+  height: 22vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
 .navbar {
   padding: 3vw 4.8vw;
   display: flex;
@@ -184,7 +193,14 @@ body {
   padding-bottom: 0.5vw;
 }
 
-.hero h2:hover {
+#hero2,
+#hero3,
+#hero4 {
+  position: relative;
+  z-index: 99;
+}
+
+#hero3 h2:hover {
   -webkit-text-stroke: 1px white;
   color: transparent;
   font-weight: 500;
@@ -205,21 +221,16 @@ body {
   height: 72vh;
   position: relative;
   left: 29%;
-  /* background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg); */
-}
-
-.video-container img {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  object-fit: cover;
+  background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .video-container video {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  opacity: 0;
 }
 
 .video-crsr {
@@ -598,12 +609,12 @@ body {
   position: relative;
 }
 
-.footer-heading h1:hover {
+/* .footer-heading h1:hover {
   -webkit-text-stroke: 1px white;
   font-weight: 400;
   color: transparent;
   font-family: "silk serif";
-}
+} */
 
 .footer-heading h1::before {
   content: "04";

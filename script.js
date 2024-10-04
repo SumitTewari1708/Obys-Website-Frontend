@@ -100,22 +100,14 @@ function loadingAnimation() {
     },
     "-=1.2"
   );
-}
 
-function cursorAnimation() {
-  document.addEventListener("mousemove", function (dest) {
-    gsap.to(".crsr", {
-      left: dest.x,
-      top: dest.y,
-    });
+  tl.from(".footer-heading h1", {
+    opacity: 0,
+    onmouseenter: function () {
+      $("h1").textillate({ in: { effect: "fadeIn" } });
+    },
   });
-
-  Shery.makeMagnet(".nav-right a", ".menu-opener__square");
 }
-
-loadingAnimation();
-// cursorAnimation();
-locomotiveAnimation();
 
 function sheryAnimation() {
   Shery.imageEffect(".img-sec", {
@@ -156,4 +148,103 @@ function sheryAnimation() {
   });
 }
 
+function crsrAnimation() {
+  Shery.mouseFollower({
+    skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+  Shery.makeMagnet(".nav-right a", ".menu-opener__square");
+
+  var videoCont = document.querySelector(".video-container");
+  var video = document.querySelector(".video-container video");
+
+  videoCont.addEventListener("mouseenter", function () {
+    videoCont.addEventListener("mousemove", function (details) {
+      gsap.to(".mousefollower", {
+        opacity: 0,
+      });
+
+      gsap.to(".video-crsr", {
+        left: details.x - 480,
+        y: details.y - 115,
+      });
+    });
+  });
+
+  videoCont.addEventListener("mouseleave", function () {
+    gsap.to(".mousefollower", {
+      opacity: 1,
+    });
+
+    gsap.to(".video-crsr", {
+      top: "-10%",
+      left: "80%",
+    });
+  });
+
+  var flag = 0;
+  videoCont.addEventListener("click", function () {
+    if (flag == 0) {
+      video.play();
+      video.style.opacity = 1;
+      document.querySelector(
+        ".video-crsr"
+      ).innerHTML = `<i class="ri-pause-fill"></i>`;
+      gsap.to(".video-crsr", {
+        scale: 0.5,
+      });
+      flag = 1;
+    } else {
+      video.pause();
+      video.style.opacity = 0;
+      document.querySelector(
+        ".video-crsr"
+      ).innerHTML = `<i class="ri-play-fill"></i>`;
+      gsap.to(".video-crsr", {
+        scale: 1,
+      });
+      flag = 0;
+    }
+  });
+}
+
+function flagMotion() {
+  document.addEventListener("mousemove", function (dets) {
+    gsap.to("#flag-crsr", {
+      x: dets.x,
+      y: dets.y,
+    });
+  });
+
+  document.querySelector("#hero3").addEventListener("mouseenter", function () {
+    gsap.to("#flag-crsr", {
+      opacity: 1,
+    });
+  });
+  document.querySelector("#hero3").addEventListener("mouseleave", function () {
+    gsap.to("#flag-crsr", {
+      opacity: 0,
+    });
+  });
+}
+
+function footerAnimation() {
+  $(document).ready(function () {
+    $("#fh-motion").textillate({
+      in: { effect: "rollIn" },
+      in: {},
+    });
+
+    $("#fh-motion").hover(function () {
+      $(this).textillate("start");
+    });
+  });
+}
+
+loadingAnimation();
+locomotiveAnimation();
 sheryAnimation();
+crsrAnimation();
+flagMotion();
+footerAnimation();
